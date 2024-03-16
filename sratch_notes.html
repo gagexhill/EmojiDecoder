@@ -1,0 +1,55 @@
+<!--
+#function to decode emojis
+def decode_emoji(user_text):
+    #'emoji.demojize()' replaces emojis with their corresponding text
+    user_decoded_emoji = emoji.demojize(user_text)
+
+    print("\nHere is your decoded text:\n" + '-' * 26)
+
+    for char in user_text:
+        #checking if the character is an emojiS
+        if char in emoji.EMOJI_DATA:
+            print(f"\n{char} {emoji.demojize(char)}")
+            emoji_info = get_emoji_info(char)
+            print_emoji_info(emoji_info)
+
+    return user_decoded_emoji
+
+    --------------------------------------------------------------------------
+
+    #main function
+def main():
+    while True:
+        name = input("What is your name? ")
+        user_correct = input(f"\nYou told me your name is {name.title()}.\n\nIs this correct? ")
+        if user_correct.lower() in ["yes", "y"]:
+            print(f"\n😃 Awesome name!😃\n\nHi {name.title()}! My name is Zoop and I'm going to help you decode those tough millennial emojis.\n")
+            break
+        elif user_correct.lower() in ["no", "n"]:
+            print("\n🤔 Sorry about that! Let's try again.")
+        else:
+            print("\n🫨 Sorry, I didn't understand your response. Please respond with ['yes', 'no'].")
+
+    while True:
+        #user includes text with emojis for emoji module to decode
+        user_text = input("Please enter the text with those pesky emojis here and I'll get to decoding right away for you.\nPress [Enter] when you're ready to continue.\n")
+        decoded_text = decode_emoji(user_text)
+        print()
+
+        user_text_more = input("Is there anything else I can decode for you? ")
+
+        if user_text_more.lower() in ["yes", "y"]:
+            print("\nGreat! Please enter your text below.\nPress [Enter] when you're ready to continue.\n")
+        elif user_text_more.lower() in ["no", "n"]:
+            print(f"\n😃 Fantastic!😃\n\nI enjoyed decoding for you.\nIt's my only purpose in this noncorporeal existence.🥲\nAnywho, feel free to drop in anytime.\n\nHave a wonderful day {name.title()}!\n")
+            break
+        else:
+            print("\n🫨 Sorry, I didn't understand your response. Please respond with ['yes', 'no'].")
+
+if __name__ == "__main__":
+    main()
+
+    --------------------------------------------------------------------------
+
+    
+-->
